@@ -1,0 +1,44 @@
+{
+  "name": "hyperbridge",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Vladislav Orlov <me@orlov-vo.ru>",
+  "homepage": "https://github.com/orlov-vo/hyperbridge#readme",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orlov-vo/hyperbridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/orlov-vo/hyperbridge/issues"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "source": "./src/hyperbridge.ts",
+  "main": "./dist/hyperbridge.cjs",
+  "module": "./dist/hyperbridge.js",
+  "types": "./dist/hyperbridge.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/hyperbridge.d.ts",
+      "import": "./dist/hyperbridge.modern.js",
+      "require": "./dist/hyperbridge.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "start": "microbundle watch",
+    "build": "microbundle",
+    "fmt": "prettier --write .",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.193",
+    "microbundle": "^0.15.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  }
+}
